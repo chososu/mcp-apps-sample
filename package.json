@@ -1,0 +1,36 @@
+{
+  "name": "mcp-cloud-logging-viewer",
+  "version": "1.0.0",
+  "description": "MCP Apps server for viewing GCP Cloud Logging entries interactively",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "mcp-log-viewer": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc && vite build",
+    "build:server": "tsc",
+    "build:ui": "vite build",
+    "dev": "concurrently \"tsc --watch\" \"vite build --watch\"",
+    "start:stdio": "node dist/index.js --stdio",
+    "start:http": "node dist/index.js --http"
+  },
+  "dependencies": {
+    "@google-cloud/logging": "^11.0.0",
+    "@modelcontextprotocol/ext-apps": "^1.2.0",
+    "@modelcontextprotocol/sdk": "^1.24.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "google-auth-library": "^10.6.1",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.0.0",
+    "concurrently": "^9.0.0",
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0",
+    "vite-plugin-singlefile": "^2.3.0"
+  }
+}
